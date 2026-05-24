@@ -3,146 +3,372 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Website Biodata</title>
 
+    <!-- Font Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
     <style>
-        body{
-            font-family: Arial, sans-serif;
-            background-color: #f2f2f2;
+
+        *{
             margin: 0;
-            padding: 20px;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg,#001b5e,#0039a6,#005eff);
+            min-height: 100vh;
+            padding: 40px;
         }
 
         h1{
             text-align: center;
-            color: #333;
+            color: white;
+            font-size: 55px;
+            margin-bottom: 15px;
+            font-weight: 700;
+            text-shadow: 0 5px 10px rgba(0,0,0,0.3);
+        }
+
+        /* Garis bawah judul */
+        .line{
+            width: 160px;
+            height: 5px;
+            background: #27c6ff;
+            margin: auto;
+            border-radius: 10px;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .line::before{
+            content: "";
+            width: 20px;
+            height: 20px;
+            background: #27c6ff;
+            border-radius: 50%;
+            position: absolute;
+            top: -7px;
+            left: 50%;
+            transform: translateX(-50%);
         }
 
         .container{
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
-            gap: 20px;
-            margin-top: 30px;
+            grid-template-columns: repeat(auto-fit,minmax(350px,1fr));
+            gap: 35px;
         }
 
         .card{
-            background: white;
-            border-radius: 10px;
+            background: rgba(0,40,120,0.55);
+            border-radius: 25px;
             overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-            transition: 0.3s;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.35);
+            border: 1px solid rgba(255,255,255,0.15);
+            transition: 0.4s;
         }
 
         .card:hover{
-            transform: scale(1.03);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.45);
         }
 
+        /* FOTO */
         .card img{
             width: 100%;
-            height: auto;
-            object-fit: contain;
-            background: #fff;
+            height: 520px;
+            object-fit: cover;
+            display: block;
         }
 
         .biodata{
-            padding: 15px;
+            padding: 25px;
         }
 
         .biodata h2{
             text-align: center;
-            color: #222;
+            color: #36c8ff;
+            font-size: 40px;
+            margin-bottom: 25px;
         }
 
-        .biodata p{
-            margin: 8px 0;
-            color: #555;
+        .info{
+            background: rgba(255,255,255,0.08);
+            margin-bottom: 15px;
+            padding: 15px;
+            border-radius: 12px;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: 0.3s;
         }
+
+        .info:hover{
+            background: rgba(255,255,255,0.18);
+            transform: translateX(5px);
+        }
+
+        .info i{
+            color: #49d7ff;
+            font-size: 20px;
+            min-width: 25px;
+        }
+
+        .info span{
+            font-size: 18px;
+        }
+
+        @media(max-width:768px){
+
+            body{
+                padding: 20px;
+            }
+
+            h1{
+                font-size: 35px;
+            }
+
+            .container{
+                grid-template-columns: 1fr;
+            }
+
+            .card img{
+                height: 450px;
+            }
+
+        }
+
     </style>
+
 </head>
 <body>
 
     <h1>Website Biodata Mahasiswa Kelompok 4</h1>
 
+    <div class="line"></div>
+
     <div class="container">
 
-        <!-- Biodata 1 -->
+        <!-- CARD 1 -->
         <div class="card">
-            <img src="01.jpeg" alt="Foto 1">
+
+            <img src="01.jpeg">
 
             <div class="biodata">
+
                 <h2>Biodata 1</h2>
 
-                <p><b>Nama :</b>Zeki Zimah</p>
-                <p><b>Tempat, Tanggal Lahir :</b>Seluma, 01 Februari 2005</p>
-                <p><b>Jenis Kelamin :</b> Laki-laki</p>
-                <p><b>Alamat :</b> Bengkulu</p>
-                <p><b>NPM :</b>2455201066</p>
-                <p><b>Jurusan :</b> Teknik Informatika</p>
+                <div class="info">
+                    <i class="fa-solid fa-user"></i>
+                    <span>Nama : Zeki Zimah</span>
+                </div>
+
+                <div class="info">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    <span>Tempat, Tanggal Lahir : Seluma, 01 Februari 2005</span>
+                </div>
+
+                <div class="info">
+                    <i class="fa-solid fa-venus-mars"></i>
+                    <span>Jenis Kelamin : Laki-laki</span>
+                </div>
+
+                <div class="info">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span>Alamat : Bengkulu</span>
+                </div>
+
+                <div class="info">
+                    <i class="fa-solid fa-book"></i>
+                    <span>NPM : 2455201066</span>
+                </div>
+
+                <div class="info">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    <span>Jurusan : Teknik Informatika</span>
+                </div>
+
             </div>
+
         </div>
 
-        <!-- Biodata 2 -->
+        <!-- CARD 2 -->
         <div class="card">
-            <img src="02.jpeg" alt="Foto 2">
+
+            <img src="02.jpeg">
 
             <div class="biodata">
+
                 <h2>Biodata 2</h2>
 
-                <p><b>Nama :</b>Lusi Septiana</p>
-                <p><b>Tempat, Tanggal Lahir :</b> Bengkulu, 26 September 2006</p>
-                <p><b>Jenis Kelamin :</b> Perempuan</p>
-                <p><b>Alamat :</b>Bengkulu</p>
-                <p><b>NPM :</b> 2455201058</p>
-                <p><b>Jurusan :</b> Teknik Informatika</p>
+                <div class="info">
+                    <i class="fa-solid fa-user"></i>
+                    <span>Nama : Lusi Septiana</span>
+                </div>
+
+                <div class="info">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    <span>Tempat, Tanggal Lahir : Bengkulu, 26 September 2006</span>
+                </div>
+
+                <div class="info">
+                    <i class="fa-solid fa-venus-mars"></i>
+                    <span>Jenis Kelamin : Perempuan</span>
+                </div>
+
+                <div class="info">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span>Alamat : Bengkulu</span>
+                </div>
+
+                <div class="info">
+                    <i class="fa-solid fa-book"></i>
+                    <span>NPM : 2455201058</span>
+                </div>
+
+                <div class="info">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    <span>Jurusan : Teknik Informatika</span>
+                </div>
+
             </div>
+
         </div>
 
-        <!-- Biodata 3 -->
+        <!-- CARD 3 -->
         <div class="card">
-            <img src="03.jpeg" alt="Foto 3">
+
+            <img src="03.jpeg">
 
             <div class="biodata">
+
                 <h2>Biodata 3</h2>
 
-                <p><b>Nama :</b> Yayu Ramadani</p>
-                <p><b>Tempat, Tanggal Lahir :</b> Biaro lama, 19 Oktober 2006</p>
-                <p><b>Jenis Kelamin :</b> perempuan</p>
-                <p><b>Alamat :</b> Bengkulu</p>
-                <p><b>NPM :</b> 2455201034</p>
-                <p><b>Jurusan :</b> Teknik Informatika</p>
+                <div class="info">
+                    <i class="fa-solid fa-user"></i>
+                    <span>Nama : Yayu Ramadani</span>
+                </div>
+
+                <div class="info">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    <span>Tempat, Tanggal Lahir : Biaro Lama, 19 Oktober 2004</span>
+                </div>
+
+                <div class="info">
+                    <i class="fa-solid fa-venus-mars"></i>
+                    <span>Jenis Kelamin : Perempuan</span>
+                </div>
+
+                <div class="info">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span>Alamat : Bengkulu</span>
+                </div>
+
+                <div class="info">
+                    <i class="fa-solid fa-book"></i>
+                    <span>NPM : 2455201034</span>
+                </div>
+
+                <div class="info">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    <span>Jurusan : Teknik Informatika</span>
+                </div>
+
             </div>
+
         </div>
 
-        <!-- Biodata 4 -->
+        <!-- CARD 4 -->
         <div class="card">
-            <img src="04.jpeg" alt="Foto 4">
+
+            <img src="04.jpeg">
 
             <div class="biodata">
+
                 <h2>Biodata 4</h2>
 
-                <p><b>Nama :</b> Aisyah Triani</p>
-                <p><b>Tempat, Tanggal Lahir :</b> Bengkulu, 27 Agustus 2005</p>
-                <p><b>Jenis Kelamin :</b> Perempuan</p>
-                <p><b>Alamat :</b> Bengkulu</p>
-                <p><b>NPM :</b> 2455201080</p>
-                <p><b>Jurusan :</b> Teknik Informatika</p>
+                <div class="info">
+                    <i class="fa-solid fa-user"></i>
+                    <span>Nama : Aisyah Triani</span>
+                </div>
+
+                <div class="info">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    <span>Tempat, Tanggal Lahir : Bengkulu, 27 Agustus 2005</span>
+                </div>
+
+                <div class="info">
+                    <i class="fa-solid fa-venus-mars"></i>
+                    <span>Jenis Kelamin : Perempuan</span>
+                </div>
+
+                <div class="info">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span>Alamat : Bengkulu</span>
+                </div>
+
+                <div class="info">
+                    <i class="fa-solid fa-book"></i>
+                    <span>NPM : 24552080</span>
+                </div>
+
+                <div class="info">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    <span>Jurusan : Teknik Informatika</span>
+                </div>
+
             </div>
+
         </div>
 
-        <!-- Biodata 5 -->
+        <!-- CARD 5 -->
         <div class="card">
-            <img src="05.jpeg" alt="Foto 5">
+
+            <img src="05.jpeg">
 
             <div class="biodata">
+
                 <h2>Biodata 5</h2>
 
-                <p><b>Nama :</b> Irfan Saputra</p>
-                <p><b>Tempat, Tanggal Lahir :</b> Bengkulu utara, 24 Mei 2005</p>
-                <p><b>Jenis Kelamin :</b> Laki-laki</p>
-                <p><b>Alamat :</b> Bengkulu</p>
-                <p><b>NPM :</b> 2455201110</p>
-                <p><b>Jurusan :</b> Teknik Informatika</p>
+                <div class="info">
+                    <i class="fa-solid fa-user"></i>
+                    <span>Nama : Irfan Saputra</span>
+                </div>
+
+                <div class="info">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    <span>Tempat, Tanggal Lahir : Bengkulu utara, 24 Mei 2005</span>
+                </div>
+
+                <div class="info">
+                    <i class="fa-solid fa-venus-mars"></i>
+                    <span>Jenis Kelamin : Laki-laki</span>
+                </div>
+
+                <div class="info">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span>Alamat : Bengkulu</span>
+                </div>
+
+                <div class="info">
+                    <i class="fa-solid fa-book"></i>
+                    <span>NPM : 2455201110</span>
+                </div>
+
+                <div class="info">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    <span>Jurusan : Teknik Informatika</span>
+                </div>
+
             </div>
+
         </div>
 
     </div>
